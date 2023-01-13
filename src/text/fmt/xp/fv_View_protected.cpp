@@ -4529,14 +4529,14 @@ void FV_View::_draw(UT_sint32 x, UT_sint32 y,
 
 	// TMN: Leave this rect at function scope!
 	// gr_Graphics only stores a _pointer_ to it!
-	UT_Rect rClip;
+	UT_Rect *rClip = new UT_Rect();
 	if (bClip)
 	{
-		rClip.left = x;
-		rClip.top = y;
-		rClip.width = width;
-		rClip.height = height;
-		m_pG->setClipRect(&rClip);
+		rClip->left = x;
+		rClip->top = y;
+		rClip->width = width;
+		rClip->height = height;
+		m_pG->setClipRect(rClip);
 	}
 
 //	UT_ASSERT(m_yScrollOffset == m_pG->getPrevYOffset());

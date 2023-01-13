@@ -31,6 +31,16 @@
 
 // External includes
 #include <glib-object.h>
+#include <glib.h>
+#include <gio/gio.h>
+#include <glib/gstdio.h>
+#include <gsf/gsf-output.h>
+#include <gsf/gsf-outfile.h>
+#include <gsf/gsf-outfile-stdio.h>
+#include <gsf/gsf-output-memory.h>
+#include <gsf/gsf-output-stdio.h>
+#include <gsf/gsf-infile-zip.h>
+#include <gsf/gsf-infile.h>
 
 /**
  * Constructor

@@ -32,6 +32,11 @@
 #include <glib.h>
 #include <glib/gstdio.h>
 
+#include "gsf/gsf-input-stdio.h"
+#include "gsf/gsf-output-stdio.h"
+#include "gsf/gsf-outfile.h"
+#include "gsf/gsf-outfile-impl.h"
+
 #define MYEOL "\n"
 #define MAX_LINE_LEN 200
 #define SEPARATOR "/"

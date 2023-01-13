@@ -8,6 +8,7 @@ Makefile.in
 .libs
 .deps
 .dirstamp
+msvc2008
 
 # /
 /nbproject

@@ -55,7 +55,7 @@
 #include "ap_Win32Toolbar_FontCombo.h"
 #include "ap_Win32App.h"
 #include "ut_Win32LocaleString.h"
-
+#include "ut_assert.h"
 
 #ifndef TBSTYLE_EX_DRAWDDARROWS
 #define TBSTYLE_EX_DRAWDDARROWS 0x00000001
@@ -513,7 +513,7 @@ bool EV_Win32Toolbar::synthesize(void)
 	bool bText = false;
 	std::string value;
 	m_pWin32App->getPrefsValue(XAP_PREF_KEY_ToolbarAppearance, value);
-	UT_return_val_if_fail(!value.empty());
+	UT_return_val_if_fail(!value.empty(), false);
 
 	if (g_ascii_strcasecmp(value.c_str(), "icon") == 0)
 	{

@@ -22,6 +22,7 @@
 
 #include <windows.h>
 #include "ut_misc.h"
+#include "ut_bytebuf.h"
 #include "gr_Graphics.h"
 #include "gr_Win32CharWidths.h"
 #include "ut_vector.h"
@@ -232,7 +233,7 @@ public:
 	virtual void			clearArea(UT_sint32, UT_sint32, UT_sint32, UT_sint32);
 
 	virtual void			drawImage(GR_Image* pImg, UT_sint32 xDest, UT_sint32 yDest);
-	virtual GR_Image*		createNewImage(const char* pszName, const UT_ContsByteBufPtr & pBB, const std::string& mimetype,
+	virtual GR_Image*		createNewImage(const char* pszName, const UT_ConstByteBufPtr & pBB, const std::string& mimetype,
 						       UT_sint32 iDisplayWidth, UT_sint32 iDisplayHeight, GR_Image::GRType iType = GR_Image::GRT_Raster);
 
 	virtual bool			queryProperties(GR_Graphics::Properties gp) const;

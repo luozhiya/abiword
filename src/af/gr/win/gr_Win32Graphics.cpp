@@ -1142,7 +1142,7 @@ void GR_Win32Graphics::setClipRect(const UT_Rect* pRect)
 	// return;
 
 	UT_DebugOnly<int> res;
-	m_pRect.reset(pRect);
+	m_pRect = pRect;
 	if (pRect)
 	{
 		// set the clip rectangle

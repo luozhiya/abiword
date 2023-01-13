@@ -385,7 +385,7 @@ BOOL AP_Win32Dialog_Stylist::_styleClicked(void)
 
 	getStyleTree()->getStyleAtRowCol(sStyle,row,col);
 	
-	UT_DEBUGMSG(("StyleClicked row %d col %d style %s \n",row,col,sStyle.utf8_str()));
+	UT_DEBUGMSG(("StyleClicked row %d col %d style %s \n",row,col,sStyle.c_str()));
 	setCurStyle(sStyle);
 	return 1;
 }

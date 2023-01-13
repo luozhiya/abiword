@@ -35,6 +35,16 @@
 #include "ut_std_string.h"
 #include <pd_Document.h>
 
+#include <glib-object.h>
+#include <glib.h>
+#include <gio/gio.h>
+#include <glib/gstdio.h>
+#include <gsf/gsf-output.h>
+#include <gsf/gsf-outfile.h>
+#include <gsf/gsf-outfile-stdio.h>
+#include <gsf/gsf-output-memory.h>
+#include <gsf/gsf-output-stdio.h>
+
 /**
  * 
  */

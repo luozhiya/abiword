@@ -37,6 +37,16 @@
 #include "ODe_Common.h"
 #include <boost/algorithm/string.hpp>
 
+#include <glib-object.h>
+#include <glib.h>
+#include <gio/gio.h>
+#include <glib/gstdio.h>
+#include <gsf/gsf-output.h>
+#include <gsf/gsf-outfile.h>
+#include <gsf/gsf-outfile-stdio.h>
+#include <gsf/gsf-output-memory.h>
+#include <gsf/gsf-output-stdio.h>
+
 /**
  * Ensure that the manifest:file-entry XML elements exist for all the parent
  * directories for path. If such an element already has been written (according to

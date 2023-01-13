@@ -33,6 +33,18 @@ ABI_W_POP
 #include "ut_debugmsg.h"
 #include "ODc_Crypto.h"
 
+#include <glib-object.h>
+#include <glib.h>
+#include <gio/gio.h>
+#include <glib/gstdio.h>
+#include <gsf/gsf-input.h>
+#include <gsf/gsf-input-memory.h>
+#include <gsf/gsf-output.h>
+#include <gsf/gsf-outfile.h>
+#include <gsf/gsf-outfile-stdio.h>
+#include <gsf/gsf-output-memory.h>
+#include <gsf/gsf-output-stdio.h>
+
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif

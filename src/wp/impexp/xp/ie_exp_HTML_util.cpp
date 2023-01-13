@@ -25,6 +25,9 @@
 #include "ie_exp_HTML_util.h"
 #include "ut_std_string.h"
 
+#include "gsf/gsf-outfile.h"
+#include "gsf/gsf-output.h"
+
 #define SEPARATOR "/"
 
 const char s_DTD_XHTML_AWML[] = "!DOCTYPE html PUBLIC \"-//ABISOURCE//DTD XHTML plus AWML 2.2//EN\" \"http://www.abisource.com/2004/xhtml-awml/xhtml-awml.mod\"";

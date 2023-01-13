@@ -38,6 +38,8 @@
 #define _GLIBCXX_USE_C99_DYNAMIC 1
 #endif
 
+#include "gsf/gsf-input.h"
+
 #include <string>
 #include <vector>
 

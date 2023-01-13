@@ -105,6 +105,8 @@
 #include "pt_PieceTable.h"
 
 #include "gr_Painter.h"
+#include "ut_std_string.h"
+
 // extern prototype - this is defined in ap_EditMethods.cpp
 extern XAP_Dialog_MessageBox::tAnswer s_CouldNotLoadFileMessage(XAP_Frame * pFrame, const char * pNewFile, UT_Error errorCode);
 /*****************************************************************/
@@ -213,7 +215,7 @@ bool AP_Win32App::initialize(void)
 			UT_return_val_if_fail (szPathname, false);
 
 			sprintf(szPathname,"%s%s%s.strings",
-					szDirectory,
+					directory,
 					((directory[directory.size() - 1] == '\\') ? "" : "\\"),
 					stringSet.c_str());
 
@@ -222,7 +224,8 @@ bool AP_Win32App::initialize(void)
 
 			if (pDiskStringSet->loadStringsFromDisk(szPathname))
 			{
-				pDiskStringSet->setFallbackStringSet(stringSet.c_str());
+				XAP_BuiltinStringSet* sset = new XAP_BuiltinStringSet(this, stringSet.c_str());
+				pDiskStringSet->setFallbackStringSet(sset);
 				m_pStringSet = pDiskStringSet;
 				UT_Language_updateLanguageNames();
 				UT_DEBUGMSG(("Using StringSet [%s]\n",szPathname));
@@ -940,12 +943,12 @@ bool AP_Win32App::_pasteFormatFromClipboard(PD_DocumentRange * pDocRange, const 
  		CreateBMP(hWnd, *bBufBMP, bi, hBitmap,hdc);                  										
  		
  		// Since we are providing the file type, there is not need to pass the bytebuff filled up
- 		errorCode = IE_ImpGraphic::constructImporter(*bBufBMP, iegft, &pIEG);				 				
+ 		errorCode = IE_ImpGraphic::constructImporter((const UT_ConstByteBufPtr &)bBufBMP, iegft, &pIEG);
 		 				
  		if(errorCode != UT_OK)		
 			return false;				  	
 		 				 			
- 		errorCode = pIEG->importGraphic(bBufBMP, pFG); 		
+ 		errorCode = pIEG->importGraphic((const UT_ConstByteBufPtr &)bBufBMP, pFG);
  		
  		if(errorCode != UT_OK || !pFG)
 		{
@@ -1469,18 +1472,18 @@ UT_Vector*	AP_Win32App::getInstalledUILanguages(void)
 bool	AP_Win32App::doesStringSetExist(const char* pLocale)
 {
 	HANDLE in;
-	const char * szDirectory = NULL;
+	std::string szDirectory;
 
 	UT_return_val_if_fail(pLocale, false);
 	
-	getPrefsValueDirectory(true,AP_PREF_KEY_StringSetDirectory,&szDirectory);
-	UT_return_val_if_fail(((szDirectory) && (*szDirectory)), false);
+	getPrefsValueDirectory(true,AP_PREF_KEY_StringSetDirectory, szDirectory);
+	UT_return_val_if_fail(!szDirectory.empty(), false);
 
-	char *szPathname = (char*) UT_calloc(sizeof(char),strlen(szDirectory)+strlen(pLocale)+100);
+	char *szPathname = (char*) UT_calloc(sizeof(char),szDirectory.length()+strlen(pLocale)+100);
 	UT_return_val_if_fail(szPathname, false);
 	
 	char *szDest = szPathname;
-	strcpy(szDest, szDirectory);
+	strcpy(szDest, szDirectory.data());
 	szDest += strlen(szDest);
 	if ((szDest > szPathname) && (szDest[-1]!='\\'))
 		*szDest++='\\';

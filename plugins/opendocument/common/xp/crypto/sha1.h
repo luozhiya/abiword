@@ -26,7 +26,7 @@
 # include <stdint.h>
 #else
 typedef unsigned int uint32_t;
-#define inline __inline
+//#define inline __inline
 #endif
 
 

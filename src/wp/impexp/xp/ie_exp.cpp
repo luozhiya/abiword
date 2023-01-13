@@ -52,6 +52,9 @@ static UT_GenericVector<IE_ExpSniffer *> m_sniffers(20);
 #include "xap_App.h"
 #include "gr_Graphics.h"
 
+#include "gsf/gsf-outfile.h"
+#include "gsf/gsf-outfile-impl.h"
+
 class ABI_EXPORT IE_FieldUpdater
 {
 public:

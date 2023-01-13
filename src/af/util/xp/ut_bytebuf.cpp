@@ -28,6 +28,13 @@
 
 #include "ut_go_file.h"
 
+#include "gsf/gsf-input.h"
+#include "gsf/gsf-output.h"
+#include "gsf/gsf-input-stdio.h"
+#include "gsf/gsf-output-stdio.h"
+#include "gsf/gsf-outfile.h"
+#include "gsf/gsf-outfile-impl.h"
+
 #define DEFAULT_CHUNK		1024
 #define MIN_CHUNK			256
 

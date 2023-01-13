@@ -33,6 +33,15 @@
 #include "fg_GraphicRaster.h"
 #include "fg_GraphicVector.h"
 
+#include "gsf/gsf-input.h"
+#include "gsf/gsf-output.h"
+#include "gsf/gsf-input-stdio.h"
+#include "gsf/gsf-output-stdio.h"
+#include "gsf/gsf-outfile.h"
+#include "gsf/gsf-outfile-impl.h"
+#include "gsf/gsf-input-memory.h"
+#include "gsf/gsf-output-memory.h"
+
 /*****************************************************************/
 /*****************************************************************/
 

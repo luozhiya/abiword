@@ -433,9 +433,9 @@ public:
   {    
     d (g_print ("createNewImage()\n"));
     if (m_pGraphics)
-      return m_pGraphics->createNewImage(pszName, pBB, mimetype, iDisplayWidth, iDisplayHeight, iType);
+      return m_pGraphics->createNewImage(pszName, (const UT_ConstByteBufPtr &)pBB, mimetype, iDisplayWidth, iDisplayHeight, iType);
     else
-      return GR_Win32Graphics::createNewImage(pszName, pBB, mimetype, iDisplayWidth, iDisplayHeight, iType);
+      return GR_Win32Graphics::createNewImage(pszName, (const UT_ConstByteBufPtr &)pBB, mimetype, iDisplayWidth, iDisplayHeight, iType);
   }
   
   virtual void drawImage(GR_Image* pImg, UT_sint32 xDest, UT_sint32 yDest)

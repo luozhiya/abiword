@@ -26,6 +26,22 @@
 // Internal includes
 #include <ie_imp_OpenXML.h>
 
+#include <glib-object.h>
+#include <glib.h>
+#include <gio/gio.h>
+#include <glib/gstdio.h>
+#include <gsf/gsf-input.h>
+#include <gsf/gsf-input-memory.h>
+#include <gsf/gsf-input-gzip.h>
+#include <gsf/gsf-infile-zip.h>
+#include <gsf/gsf-infile.h>
+#include <gsf/gsf-output.h>
+#include <gsf/gsf-outfile.h>
+#include <gsf/gsf-outfile-stdio.h>
+#include <gsf/gsf-output-memory.h>
+#include <gsf/gsf-output-stdio.h>
+
+
 /**
  * Constructor
  * 

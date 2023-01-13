@@ -658,7 +658,7 @@ bool GR_Win32Image::_convertFromJPEG(const UT_ByteBuf* pBB, UT_sint32 iDisplayWi
 	// while we also do that in UT_JPEG_getRGBData below.
 	// This however allows us to decode the image data directly into the DIB we
 	// create below, which saves us a potentially huge memory copy.
-	if (!UT_JPEG_getDimensions(pBB, iImageWidth, iImageHeight))
+	if (!UT_JPEG_getDimensions((const UT_ConstByteBufPtr & )pBB, iImageWidth, iImageHeight))
 		return false;
 
 	UT_uint32 iBytesInRow = iImageWidth * 3;
@@ -693,7 +693,7 @@ bool GR_Win32Image::_convertFromJPEG(const UT_ByteBuf* pBB, UT_sint32 iDisplayWi
 
 	UT_Byte* pBuf = ((unsigned char*) m_pDIB) + m_pDIB->bmiHeader.biSize;
 	
-	if (!UT_JPEG_getRGBData(pBB, pBuf, iBytesInRow, true, true))
+	if (!UT_JPEG_getRGBData((const UT_ConstByteBufPtr &)pBB, pBuf, iBytesInRow, true, true))
 	{
 		FREEP(m_pDIB);
 		return false;

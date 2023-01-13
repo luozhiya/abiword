@@ -20,6 +20,9 @@
 #include <sstream>
 #include "ut_debugmsg.h"
 
+#include "gsf/gsf-output-gzip.h"
+#include "gsf/gsf-output.h"
+
 IE_Exp_XML::IE_Exp_XML(PD_Document * pDocument):
 	IE_Exp(pDocument), m_zip(nullptr), m_xml(nullptr)
 {

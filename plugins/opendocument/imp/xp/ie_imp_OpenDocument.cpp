@@ -43,6 +43,11 @@
 #include "pd_DocumentRDF.h"
 
 #include <glib-object.h>
+#include <gsf/gsf-input.h>
+#include <gsf/gsf-input-memory.h>
+#include <gsf/gsf-input-gzip.h>
+#include <gsf/gsf-infile-zip.h>
+#include <gsf/gsf-infile.h>
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"

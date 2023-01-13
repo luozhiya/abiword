@@ -268,7 +268,8 @@ GR_Graphics::GR_Graphics()
 	  m_iPrevYOffset(0),
 	  m_iPrevXOffset(0),
 	  m_AllCarets(this,&m_pCaret,&m_vecCarets),
-	  m_bAntiAliasAlways(false)
+	  m_bAntiAliasAlways(false),
+	  m_pRect(NULL)
 {
 }
 

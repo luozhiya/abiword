@@ -22,6 +22,8 @@
 #define IE_EXP_XML_H
 
 #include "ie_exp.h"
+#include "gsf/gsf-libxml.h"
+
 #include <string>
 
 class ABI_EXPORT IE_Exp_XML: public IE_Exp

@@ -73,6 +73,21 @@
 #endif
 
 #include "ut_types.h"
+//#include "gobject/gtype.h"
+//#include "gobject/gtypemodule.h"
+//#include "gobject/gobject.h"
+#include "gsf/gsf-output-memory.h"
+#include "gsf/gsf-input-memory.h"
+#include "gio/gio.h"
+#include "glib-2.0/glib-object.h"
+#include "gsf/gsf-impl-utils.h"
+#include "gsf/gsf-input-gio.h"
+#include "gsf/gsf-output-gio.h"
+#include "gsf/gsf-output-stdio.h"
+#include "gsf/gsf-input-stdio.h"
+#include "gsf/gsf-input-http.h"
+#include "gsf/gsf-input-impl.h"
+#include "gsf/gsf-output-impl.h"
 
 #ifndef _
 #define _(X) X

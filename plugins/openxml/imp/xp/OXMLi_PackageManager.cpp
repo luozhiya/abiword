@@ -36,6 +36,22 @@
 #include <ut_debugmsg.h>
 #include <ut_xml.h>
 
+#include <glib-object.h>
+#include <glib.h>
+#include <gio/gio.h>
+#include <glib/gstdio.h>
+#include <gsf/gsf-input.h>
+#include <gsf/gsf-input-memory.h>
+#include <gsf/gsf-input-gzip.h>
+#include <gsf/gsf-infile-zip.h>
+#include <gsf/gsf-infile.h>
+#include <gsf/gsf-output.h>
+#include <gsf/gsf-outfile.h>
+#include <gsf/gsf-outfile-stdio.h>
+#include <gsf/gsf-output-memory.h>
+#include <gsf/gsf-output-stdio.h>
+#include <gsf/gsf-open-pkg-utils.h>
+
 OXMLi_PackageManager* OXMLi_PackageManager::s_pInst = NULL;
 
 OXMLi_PackageManager* OXMLi_PackageManager::getNewInstance()

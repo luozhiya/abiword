@@ -60,13 +60,13 @@ void XAP_CustomWidgetLU::draw(const UT_Rect *clip)
 		drawLU(NULL);
 	else
 	{
-		UT_Rect r(
+		UT_Rect *r = new UT_Rect(
 				gr->tlu(clip->left),
 				gr->tlu(clip->top),
 				gr->tlu(clip->width),
 				gr->tlu(clip->height)
 			);
-		drawLU(&r);
+		drawLU(r);
 	}
 }
 

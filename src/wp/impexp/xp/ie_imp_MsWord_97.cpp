@@ -73,6 +73,21 @@
 #undef IE_IMP_MSWORD_DUMP
 #endif
 
+#include "gsf/gsf-utils.h"
+#include "gsf/gsf-input.h"
+#include "gsf/gsf-output.h"
+#include "gsf/gsf-input-stdio.h"
+#include "gsf/gsf-output-stdio.h"
+#include "gsf/gsf-outfile.h"
+#include "gsf/gsf-outfile-impl.h"
+#include "gsf/gsf-input-memory.h"
+#include "gsf/gsf-output-memory.h"
+#include "gsf/gsf-infile.h"
+#include "gsf/gsf-infile-msole.h"
+#include "gsf/gsf-meta-names.h"
+#include "gsf/gsf-doc-meta-data.h"
+#include "gsf/gsf-docprop-vector.h"
+
 #define X_CheckError(v) 		do { if (!(v)) return 1; } while (0)
 
 // undef this to disable support for older images (<= Word95)
@@ -1106,6 +1121,10 @@ cb_print_property (char const *name, GsfDocProp const *prop, DocAndLid * doc)
 		  }
 	  }
   }
+}
+
+GError* gsf_doc_meta_data_read_from_msole(GsfDocMetaData*, GsfInput *) {
+	return 0;
 }
 
 static void print_summary_stream (GsfInfile * msole,

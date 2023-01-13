@@ -28,7 +28,10 @@
 // Internal includes
 #include "ie_exp_OpenDocument.h"
 
-
+#include <glib.h>
+#include <glib/gstdio.h>
+#include <gsf/gsf-output.h>
+#include <gsf/gsf-outfile-stdio.h>
 
 /**
  * Constructor

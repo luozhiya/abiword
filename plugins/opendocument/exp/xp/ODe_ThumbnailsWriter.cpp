@@ -35,6 +35,14 @@
 #include <gr_Graphics.h>
 #include <gr_Painter.h>
 
+#include <glib-object.h>
+#include <glib.h>
+#include <gio/gio.h>
+#include <glib/gstdio.h>
+#include <gsf/gsf-output.h>
+#include <gsf/gsf-outfile.h>
+#include <gsf/gsf-outfile-stdio.h>
+
 bool ODe_ThumbnailsWriter::writeThumbnails(PD_Document* /*pDoc*/, GsfOutfile* oo) {
 
 	GsfOutput* thumbnailsDir = gsf_outfile_new_child (oo, "Thumbnails", TRUE);
